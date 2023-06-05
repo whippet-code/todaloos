@@ -3,23 +3,21 @@ import firebase from './firebase'
 
 import './App.css'
 
-import dotenv from 'dotenv'
-// allows access to environment variables - see .env file
-dotenv.config()
 
-// setup and link to firebase db
+// setup and link to firestore db
 const firebaseConfig = {
-
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL
 }
+
+firebase.initializeApp(firebaseConfig)
 
 function App() {
 
   const [ todos, setTodos ] = useState([])
 
   useEffect(() => {
-    const fetchData = async () => {
-
-    }
+    const db = firebase.firestore()
+    const data = db.getDatabase('todos')
   }, [])
 
   return (
