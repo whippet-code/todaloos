@@ -1,30 +1,32 @@
+import { useState, useEffect } from 'react'
+import firebase from './firebase'
+
 import './App.css'
 
 import dotenv from 'dotenv'
 // allows access to environment variables - see .env file
 dotenv.config()
 
-const Todos = [
-  {
-    id: 1,
-    title: 'Buy Milk',
-    completed: false,
-  },
-  {
-    id: 2,
-    title: 'Buy Bread',
-    completed: false,
-  }
-]
+// setup and link to firebase db
+const firebaseConfig = {
+
+}
 
 function App() {
+
+  const [ todos, setTodos ] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+
+    }
+  }, [])
 
   return (
     <>
 
       <h1>ToDaLoos</h1>
       <div className="holder">
-        <Todos props={Todos} />
       </div>
 
     </>
