@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import getTodos from './components/setAndGet'
+import NewTodo from './components/NewTodo'
+import { getTodos } from './components/setAndGet'
 import './App.css'
 
 
@@ -21,6 +22,7 @@ function App() {
 
       <h1>ToDaLoos</h1>
       <div className="holder">
+        <NewTodo />
         {todos.map(todo => {
           return (
             <div key={todo.id}>

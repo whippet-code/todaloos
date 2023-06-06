@@ -1,8 +1,8 @@
 // Helper functions for getting and setting todos in local storage
 
 // get todos
-export default function getTodos() {
-  const todos = localStorage.getItem("todos");
+function getTodos() {
+  const todos = JSON.parse(localStorage.getItem("todos"));
   if (todos) {
     return todos;
   } else {
@@ -17,7 +17,7 @@ export default function getTodos() {
 
 // set todos
 function setTodos(todos) {
-  localStorage.setItem("todos", todos);
+  localStorage.setItem("todos", JSON.stringify(todos));
 
   // verify saved
   if (todos === getTodos()) {
@@ -26,3 +26,5 @@ function setTodos(todos) {
     return 0;
   }
 }
+
+export { getTodos, setTodos };
