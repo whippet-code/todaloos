@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import getTodos from './components/setAndGet'
 import './App.css'
 
 
@@ -8,13 +8,12 @@ function App() {
   const [ todos, setTodos ] = useState([])
 
   useEffect(() => {
-    const getTodos = async () => {
-      const response = await fetch('./todos.json')
-      const data = await response.json()
-      setTodos(data)
+    const getStorageData = () => {
+      const storageData = getTodos()
+      setTodos(storageData)
     }
     
-    getTodos()
+    getStorageData()
   }, [])
 
   return (
@@ -24,9 +23,9 @@ function App() {
       <div className="holder">
         {todos.map(todo => {
           return (
-            <>
+            <div key={todo.id}>
               <h2>{todo.task}</h2>
-            </>
+            </div>
           )
         })}
       </div>
