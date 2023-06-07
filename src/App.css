@@ -1,12 +1,55 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
+/* todo list holder */
 .holder {
-  padding: 2em;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 50vw;
 }
 
 /* ToDo */
+.todo {
+  padding: 0 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.todo:hover {
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
+h3 {
+  font-weight: 200;
+}
+
+/* input form - NewTodo */
+input {
+  padding: 1rem;
+  background-color: #fafafa;
+  border-radius: 1rem 0 0 1rem;
+  border: none;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+  background-color: #fafafa;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color:aliceblue;
+}
+
