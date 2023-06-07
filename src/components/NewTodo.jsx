@@ -2,8 +2,8 @@
 // no props, used to create a new todo and add to file / state
 
 import { getTodos, setTodos } from './setAndGet'
-
-function NewTodo() {
+//props todos & setTodos
+function NewTodo({ updateTodos }) {
 
   function submit(e) {
     e.preventDefault()
@@ -14,9 +14,10 @@ function NewTodo() {
       id: newId,
       task: e.target[0].value,
     }
-    let todos = getTodos()
-    todos.push(newTodo)
-    setTodos(todos)
+    let newTodos = getTodos()
+    newTodos.push(newTodo)
+    setTodos(newTodos)
+    updateTodos(newTodos)
   }
 
   return (

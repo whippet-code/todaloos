@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import NewTodo from './components/NewTodo'
+import Todo from './components/Todo'
 import { getTodos } from './components/setAndGet'
 import './App.css'
 
@@ -22,14 +23,8 @@ function App() {
 
       <h1>ToDaLoos</h1>
       <div className="holder">
-        <NewTodo />
-        {todos.map(todo => {
-          return (
-            <div key={todo.id}>
-              <h2>{todo.task}</h2>
-            </div>
-          )
-        })}
+        <NewTodo todos={todos} updateTodos={setTodos} />
+        {todos.map(todo => <Todo key={todo.id} task={todo.task} />)}
       </div>
 
     </>
