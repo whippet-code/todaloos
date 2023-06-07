@@ -1,6 +1,6 @@
 // New Todo form component
 // no props, used to create a new todo and add to file / state
-
+import PropTypes from 'prop-types'
 import { getTodos, setTodos } from './setAndGet'
 //props todos & setTodos
 function NewTodo({ updateTodos }) {
@@ -26,6 +26,10 @@ function NewTodo({ updateTodos }) {
       <button type="submit">Add</button>
     </form>
   )
+}
+
+NewTodo.propTypes = {
+  updateTodos: PropTypes.func
 }
 
 export default NewTodo

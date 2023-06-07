@@ -3,7 +3,7 @@
 // has a completed button which will remove the todo from file and screen
 
 import { setTodos } from './setAndGet'
-
+import PropTypes from 'prop-types'
 function Todo({ todo, todos, updateTodos }) {
 
   const deleteTodo = () => {
@@ -17,11 +17,16 @@ function Todo({ todo, todos, updateTodos }) {
     updateTodos(newTodos)
   }
   return(
-    <div className="todo">
+    <div className="todo" onClick={deleteTodo}>
       <h3>{todo.task}</h3>
-      <button type="button" onClick={deleteTodo}>Done</button>
     </div>
   )
+}
+
+Todo.propTypes = {
+  todo: PropTypes.object,
+  todos: PropTypes.array,
+  updateTodos: PropTypes.func
 }
 
 export default Todo

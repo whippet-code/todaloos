@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple react.js todo list app initialised with vite. It uses a firebase database to store the data.
+This is a simple react.js todo list app initialised with vite. It uses a localstorage to store the todo items.
 
 ## Installation
 
