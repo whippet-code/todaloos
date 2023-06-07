@@ -2,9 +2,25 @@
 // props todo id & task
 // has a completed button which will remove the todo from file and screen
 
-function Todo({ task }) {
+import { getTodos, setTodos } from './setAndGet'
+
+function Todo(props) {
+
+  const deleteTodo = () => {
+    // get from storage, filter out this todo via id and save new todos array
+    const todos = getTodos()
+    const newTodos = todos.filter(todo => {
+      if(todo.id !== props.todo.id) {
+        return todo
+      }
+    })
+    setTodos(newTodos)
+  }
   return(
-    <h3>{task}</h3>
+    <div className="todo">
+      <h3>{props.todo.task}</h3>
+      <button type="button" onClick={deleteTodo}>Done</button>
+    </div>
   )
 }
 

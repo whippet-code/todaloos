@@ -24,7 +24,7 @@ function App() {
       <h1>ToDaLoos</h1>
       <div className="holder">
         <NewTodo todos={todos} updateTodos={setTodos} />
-        {todos.map(todo => <Todo key={todo.id} task={todo.task} />)}
+        {todos.map(todo => <Todo key={todo.id} todo={todo} />)}
       </div>
 
     </>
