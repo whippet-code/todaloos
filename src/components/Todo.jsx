@@ -15,6 +15,7 @@ function Todo(props) {
       }
     })
     setTodos(newTodos)
+    props.updateTodos(newTodos)
   }
   return(
     <div className="todo">
